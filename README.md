@@ -24,31 +24,9 @@ The task is to predict sales for the 15 days following the last date in `train.c
 ---
 
 ## Project Structure
-The solution is implemented in a single Jupyter Notebook, broken into 22 cells:
+The solution is implemented in a single Jupyter Notebook:
 
-### Part 1: Data Processing and Feature Engineering (Cells 1-9)
-- **Cell 1**: Import libraries (Pandas, NumPy, Matplotlib, Scikit-learn, XGBoost, LightGBM, Statsmodels, TensorFlow).
-- **Cell 2**: Load and clean data (handle missing oil prices, merge datasets, format dates).
-- **Cell 3**: Add time-based features (year, month, day, etc.) and event flags (paydays, earthquake).
-- **Cell 4**: Compute rolling statistics and lagged sales features.
-- **Cell 5**: Create store-specific aggregations (average sales by store type, top product families).
-- **Cells 6-9**: Exploratory Data Analysis (EDA) with plots for sales trends, holiday effects, oil price correlations, and anomalies.
 
-### Part 2: Model Selection, Forecasting, and Evaluation (Cells 10-22)
-- **Cell 10**: Prepare data for modeling (encode categorical variables, split train/validation sets).
-- **Cell 11**: Define evaluation metrics (RMSE, MAPE, R²).
-- **Cells 12-17**: Train models:
-  - Cell 12: Naïve (baseline)
-  - Cell 13: Random Forest
-  - Cell 14: XGBoost
-  - Cell 15: LightGBM
-  - Cell 16: ARIMA (single series)
-  - Cell 17: LSTM
-- **Cell 18**: Evaluate all models together (metrics table and verification).
-- **Cell 19**: Visualize actual vs. predicted sales for all models.
-- **Cell 20**: Plot feature importance for Random Forest, XGBoost, and LightGBM.
-- **Cell 21**: Provide interpretation and business insights.
-- **Cell 22**: Generate submission files for all models.
 
 ---
 
@@ -87,19 +65,19 @@ The solution is implemented in a single Jupyter Notebook, broken into 22 cells:
 
 ## Running the Code
 1. **Execute Cells Sequentially**:
-   - Run Cells 1-22 in order. Each cell builds on the previous ones.
-   - Cells 1-9 prepare the data; Cells 10-22 train models and generate outputs.
+   -Each cell builds on the previous ones.
+   - prepare the data; train models and generate outputs.
 
 2. **Key Outputs**:
-   - **EDA Plots**: Sales trends, holiday effects, oil price correlations (Cells 6-9).
-   - **Metrics Table**: RMSE, MAPE, R² for all models (Cell 18).
-   - **Prediction Plots**: Actual vs. predicted sales for each model (Cell 19).
-   - **Feature Importance**: For Random Forest, XGBoost, LightGBM (Cell 20).
-   - **Submission Files**: `submission_<model>.csv` for each model (Cell 22).
+   - **EDA Plots**: Sales trends, holiday effects, oil price correlations .
+   - **Metrics Table**: RMSE, MAPE, R² for all models .
+   - **Prediction Plots**: Actual vs. predicted sales for each model .
+   - **Feature Importance**: For Random Forest, XGBoost, LightGBM .
+   - **Submission Files**: `submission_<model>.csv` for each model.
 
 3. **Troubleshooting**:
    - If `KeyError: 'sales'` occurs in Cell 22, ensure `test` retains `store_nbr` and `family` from earlier cells.
-   - If a model is missing in Cell 18, check its training cell (12-17) for errors.
+   - If a model is missing in Cell 18, check its training cell for errors.
 
 ---
 
